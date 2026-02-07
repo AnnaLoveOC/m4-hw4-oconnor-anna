@@ -20,9 +20,8 @@ main, nav {
 }
 
 
-
 /* ===============================
-HEADE, NAV, FOOTER STYLES
+HEADER, NAV, FOOTER STYLES
 ================================ */
 
 nav {
@@ -73,4 +72,52 @@ footer {
 
 #nav-first {
     border-left: none; /* Removes the left border from the first nav link */
+}
+
+/* ===============================
+ARTICLE STYLES
+================================ */
+
+article {
+    background-color: #e5e5e5;
+    margin: 5% auto;
+    padding: 5%;
+    width: 60%;
+}
+
+article p {
+    line-height: 1.5;
+    color: #666666;
+}
+
+hr {
+    border: 0;
+    height: 2px;
+    background-color: #cbcbcb;
+    margin-bottom: 20px;
+}
+
+.headshot {
+    width: 40%;
+    float: left;
+    margin: 0 5% 5% 0;
+}
+
+.second {
+    clear: left;
+}
+
+
+/* ===============================
+GENERAL HEADER STYLES
+================================ */
+
+h1, h2 {
+    color: #ad102f;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 28pt;
+    margin: auto;
 }
