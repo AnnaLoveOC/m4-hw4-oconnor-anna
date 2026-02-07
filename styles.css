@@ -4,6 +4,7 @@ OVERALL PAGE STYLES
 
 * {
     font-family: "Quicksand", Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 body {
@@ -21,9 +22,13 @@ main, nav {
 
 main {
    display: flex;
-   flex-direction: column;
+   flex-direction: row;
+   align-items: flex-start;
    justify-content: center;
+   gap: 5%;
+   padding: 5% 0;
 }
+
 /* ===============================
 HEADER, NAV, FOOTER STYLES
 ================================ */
@@ -85,9 +90,10 @@ ARTICLE STYLES
 
 article {
     background-color: #e5e5e5;
-    margin: 5% auto;
+    margin: 0;
     padding: 5%;
-    width: 60%;
+    width: auto;
+    flex: 1 1 65%;
 }
 
 article p {
@@ -127,6 +133,9 @@ h1 {
     margin: auto;
 }
 
+h2 {
+    margin-bottom: 4px;
+}
 
 /* ===============================
 ASIDE STYLES
@@ -134,21 +143,81 @@ ASIDE STYLES
 
 aside {
     background-color: #e5e5e5;
-    margin: 5% auto;
-    padding: 5%;
+    margin: 0;
+    padding: 2% 5% 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 35%;
+    align-self: flex-start;
 }
 
 .icons-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    gap: 5%;
+    justify-content: center;
+    gap: 24px;
 }
 
 .social-icon {
-    width: 20%;
-    height: 20%;
+    display: block;
+}
+
+.social-icon img {
+    display: block;
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(3px 3px 5px #40403f);
+}
+
+aside hr {
+    border: none;
+    border-top: 2px solid #cbcbcb;
+    background-color: #cbcbcb;
+    margin-bottom: 6px 0 20px;
+    width: 100%;
+}
+
+/* ===============================
+RESPONSIVENESS
+================================ */
+
+/* responsive: stack + add spacing */
+@media (max-width: 900px){
+    
+    main {
+        flex-direction: column;
+        gap: 32px;          /* space between article + aside */
+        padding: 32px 16px; /* optional: nicer breathing room */
+    }
+    
+    article, aside {
+        flex: none;         /* stop the 65/35 flex sizing */
+        width: 100%;        /* full width when stacked */
+    }
+
+}
+
+@media (max-width: 900px) {
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+        padding: 0;
+        border-left: none; /* removes divider lines when stacked */
+    }
+    
+    h1 {
+        text-align: center;
+    }
 }
